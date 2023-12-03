@@ -1,0 +1,32 @@
+{
+    "os": "macOS-13.4-arm64-arm-64bit",
+    "python": "3.10.11",
+    "heartbeatAt": "2023-12-03T15:04:13.009014",
+    "startedAt": "2023-12-03T15:04:12.212617",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "exp.name=test_1",
+        "method=maml",
+        "dataset=tabula_muris"
+    ],
+    "state": "running",
+    "program": "/Users/ajkunaseipi/Documents/MA3/Deep Learning/Project/fewshotbench_v2/run.py",
+    "codePath": "run.py",
+    "host": "Ajkunas-MBP",
+    "username": "ajkunaseipi",
+    "executable": "/Users/ajkunaseipi/anaconda3/envs/fewshotbench/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 460.4317207336426,
+        "used": 11.017837524414062
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
