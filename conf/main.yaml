@@ -28,8 +28,8 @@ checkpoint:
   time: latest
 
 wandb:
-  project: "dl-biomed-1"
-  entity: "ajkuna-seipi"
+  project: "fewshotbench"
+  entity: "hichou_ajkuna_sassou"
   mode: "online" # Can set to offline, disabled
 
 iter_num: 600
