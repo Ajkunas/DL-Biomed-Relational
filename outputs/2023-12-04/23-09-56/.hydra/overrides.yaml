@@ -1,0 +1,3 @@
+- exp.name=test-protonet
+- method=protonet
+- dataset=tabula_muris

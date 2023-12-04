@@ -1,1 +1,7 @@
-*.yaml
+# ignore data directory
+data/
+checkpoints/
+wandb/
+__pycache__/
+
+
