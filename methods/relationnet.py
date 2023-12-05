@@ -23,14 +23,14 @@ class RelationNetwork(nn.Module):
                         nn.BatchNorm1d(hidden_size, momentum=1, affine=True),
                         nn.ReLU(),
                         nn.MaxPool1d(2))
-        self.fc1 = nn.Linear(input_size,hidden_size)
+        self.fc1 = nn.Linear(64*32,hidden_size)
         self.fc2 = nn.Linear(hidden_size,1)
 
     def forward(self,x):
         out = self.layer1(x)
         out = self.layer2(out)
         #out = out.view(out.size(0),-1)
-        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc1(out.view(out.size(0),-1)))
         out = F.sigmoid(self.fc2(out))
         return out
 
@@ -61,23 +61,24 @@ class RelationNet(MetaTemplate):
 
 
       
-        z_support = z_support.contiguous().view(self.n_way* self.n_support, -1)  # the shape of z is [n_data, n_dim]
+        z_support = z_support.contiguous()
+        z_proto = z_support.view(self.n_way, self.n_support, -1).sum(1)  # like the paper
         z_query = z_query.contiguous().view(self.n_way * self.n_query, -1)
 
-        # repeat z_support 5 times
-        z_support = z_support.repeat(self.n_way * self.n_query,1)
 
+        # repeat z_protos 5 times   
+        z_query = z_query.repeat_interleave(self.n_way,0)
 
-        # repeat z_query 4 times
-        z_query = z_query.repeat(self.n_way * self.n_support,1)
+        z_proto = z_proto.repeat(self.n_way * self.n_query,1)
 
+      
 
 
         # concatenate along first dimension
-        z_all = torch.cat([z_support, z_query], 1).unsqueeze(1)
+        z_all = torch.cat([z_proto, z_query], 1).unsqueeze(1)
 
         # forward on relation network
-        scores = self.relation_network(z_all)
+        scores = self.relation_network(z_all).view(-1,self.n_way)
 
 
         return scores

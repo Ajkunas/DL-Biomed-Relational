@@ -8,6 +8,8 @@ from prettytable import PrettyTable
 from datasets.cell.tabula_muris import *
 from utils.io_utils import get_resume_file, hydra_setup, fix_seed, model_to_dict, opt_to_dict, get_model_file
 
+import debugpy
+debugpy.listen(('localhost', 5678))
 
 def initialize_dataset_model(cfg):
     # Instantiate train dataset as specified in dataset config under simple_cls or set_cls
@@ -91,7 +93,7 @@ def train(train_loader, val_loader, model, cfg):
     if not os.path.isdir(cp_dir):
         os.makedirs(cp_dir)
     wandb.init(project=cfg.wandb.project, entity=cfg.wandb.entity, config=OmegaConf.to_container(cfg, resolve=True),
-               group=cfg.exp.name, settings=wandb.Settings(start_method="thread"), mode=cfg.wandb.mode)
+               group=cfg.exp.name, settings=wandb.Settings(start_method="thread"), mode=cfg.wandb.mode )
     wandb.define_metric("*", step_metric="epoch")
 
     if cfg.exp.resume:
