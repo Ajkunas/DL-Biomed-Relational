@@ -15,6 +15,7 @@ exp:
   resume: false
   seed: 42
   val_freq: 1
+  run_name: ???
 
 optimizer: Adam
 lr: 0.001
@@ -31,5 +32,6 @@ wandb:
   project: "fewshotbench"
   entity: "hichou_ajkuna_sassou"
   mode: "online" # Can set to offline, disabled
+ 
 
 iter_num: 600

@@ -93,7 +93,7 @@ def train(train_loader, val_loader, model, cfg):
     if not os.path.isdir(cp_dir):
         os.makedirs(cp_dir)
     wandb.init(project=cfg.wandb.project, entity=cfg.wandb.entity, config=OmegaConf.to_container(cfg, resolve=True),
-               group=cfg.exp.name, settings=wandb.Settings(start_method="thread"), mode=cfg.wandb.mode )
+               group=cfg.exp.name, settings=wandb.Settings(start_method="thread"), mode=cfg.wandb.mode  , name=cfg.exp.run_name )
     wandb.define_metric("*", step_metric="epoch")
 
     if cfg.exp.resume:
