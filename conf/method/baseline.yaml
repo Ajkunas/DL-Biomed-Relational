@@ -15,3 +15,4 @@ cls:
 
 train_batch: 16
 
+stop_epoch: 10

@@ -18,18 +18,18 @@
 # python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=maml-1shot
 # python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=maml-2shot
 #python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=maml-3shot
-python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=maml-4shot
-python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=maml-5shot
+#python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=maml-4shot
+#python run.py exp.name=experiment-1 method=maml dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=maml-5shot
 
 # matchingnet
-python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=matching-1shot
-python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=matching-2shot
-python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=matching-3shot
-python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=matching-4shot
-python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=matching-5shot
+#python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=matching-1shot
+#python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=matching-2shot
+#python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=matching-3shot
+#python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=matching-4shot
+#python run.py exp.name=experiment-1 method=matchingnet dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=matching-5shot
 
 # baseline
-python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=baseline-1shot
+#python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=baseline-1shot
 python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=baseline-2shot
 python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=baseline-3shot
 python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=baseline-4shot
