@@ -23,7 +23,7 @@ class RelationNetwork(nn.Module):
                         nn.BatchNorm1d(hidden_size, momentum=1, affine=True),
                         nn.ReLU(),
                         nn.MaxPool1d(2))
-        self.fc1 = nn.Linear(64*32,hidden_size)
+        self.fc1 = nn.Linear(input_size,hidden_size)
         self.fc2 = nn.Linear(hidden_size,1)
 
     def forward(self,x):
@@ -54,7 +54,7 @@ class RelationNet(MetaTemplate):
     def __init__(self, backbone,n_way, n_support):
         super(RelationNet, self).__init__(backbone, n_way, n_support)
         self.loss_fn = nn.CrossEntropyLoss()
-        self.relation_network = RelationNetwork(64*2,64)
+        self.relation_network = RelationNetwork(64*(backbone.final_feat_dim//2),64)
 
     def set_forward(self, x, is_feature=False):
         z_support, z_query = self.parse_feature(x, is_feature)
