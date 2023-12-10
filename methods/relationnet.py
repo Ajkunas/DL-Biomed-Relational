@@ -53,7 +53,7 @@ def weights_init(m):
 class RelationNet(MetaTemplate):
     def __init__(self, backbone,n_way, n_support):
         super(RelationNet, self).__init__(backbone, n_way, n_support)
-        self.loss_fn = nn.CrossEntropyLoss()
+        self.loss_fn = nn.MSELoss()
         self.relation_network = RelationNetwork(64*(backbone.final_feat_dim//2),64)
 
     def set_forward(self, x, is_feature=False):
@@ -89,6 +89,12 @@ class RelationNet(MetaTemplate):
         y_query = Variable(y_query.cuda())
 
         scores = self.set_forward(x)
+
+        # trasnform y_query to probabilities for each class
+        eye_tensor = torch.eye(5).cuda()
+        y_query =eye_tensor[y_query]
+
+
 
         return self.loss_fn(scores, y_query )
 

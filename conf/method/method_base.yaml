@@ -6,4 +6,4 @@ fast_weight: False
 
 start_epoch: 0
 eval_type: set
-stop_epoch: 100
+stop_epoch: 200

@@ -1,11 +1,11 @@
 # experiment-1 : vary n_shot from 1 to 5
  
 # relationnet
-# python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=relation-1shot
-# python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=relation-2shot
-# python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=relation-3shot
-# python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=relation-4shot
-# python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=relation-5shot
+python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=relation-1shot
+python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=relation-2shot
+python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=relation-3shot
+python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=relation-4shot
+python run.py exp.name=experiment-1 method=relationnet dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=relation-5shot
 
 
 # # protonet
@@ -30,10 +30,10 @@
 
 # baseline
 #python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=1 n_query=15 exp.run_name=baseline-1shot
-python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=baseline-2shot
-python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=baseline-3shot
-python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=baseline-4shot
-python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=baseline-5shot
+# python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=2 n_query=15 exp.run_name=baseline-2shot
+# python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=3 n_query=15 exp.run_name=baseline-3shot
+# python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=4 n_query=15 exp.run_name=baseline-4shot
+# python run.py exp.name=experiment-1 method=baseline dataset=tabula_muris n_way=5 n_shot=5 n_query=15 exp.run_name=baseline-5shot
 
 
 
