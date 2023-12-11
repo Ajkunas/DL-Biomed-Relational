@@ -1,4 +1,3 @@
-# This code is modified from https://github.com/jakesnell/prototypical-networks 
 import numpy as np
 import torch
 import torch.nn as nn
@@ -29,7 +28,6 @@ class RelationNetwork(nn.Module):
     def forward(self,x):
         out = self.layer1(x)
         out = self.layer2(out)
-        #out = out.view(out.size(0),-1)
         out = F.relu(self.fc1(out.view(out.size(0),-1)))
         out = F.sigmoid(self.fc2(out))
         return out
@@ -58,29 +56,19 @@ class RelationNet(MetaTemplate):
 
     def set_forward(self, x, is_feature=False):
         z_support, z_query = self.parse_feature(x, is_feature)
-
-
       
         z_support = z_support.contiguous()
         z_proto = z_support.view(self.n_way, self.n_support, -1).sum(1)  # like the paper
         z_query = z_query.contiguous().view(self.n_way * self.n_query, -1)
 
-
-        # repeat z_protos 5 times   
         z_query = z_query.repeat_interleave(self.n_way,0)
-
         z_proto = z_proto.repeat(self.n_way * self.n_query,1)
 
-      
-
-
-        # concatenate along first dimension
+    
         z_all = torch.cat([z_proto, z_query], 1).unsqueeze(1)
 
-        # forward on relation network
         scores = self.relation_network(z_all).view(-1,self.n_way)
-
-
+        
         return scores
 
 
@@ -90,11 +78,8 @@ class RelationNet(MetaTemplate):
 
         scores = self.set_forward(x)
 
-        # trasnform y_query to probabilities for each class
         eye_tensor = torch.eye(5).cuda()
         y_query =eye_tensor[y_query]
-
-
 
         return self.loss_fn(scores, y_query )
 
