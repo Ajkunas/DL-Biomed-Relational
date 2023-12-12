@@ -78,7 +78,7 @@ class RelationNet(MetaTemplate):
 
         scores = self.set_forward(x)
 
-        eye_tensor = torch.eye(5).cuda()
+        eye_tensor = torch.eye(self.n_way).cuda()
         y_query =eye_tensor[y_query]
 
         return self.loss_fn(scores, y_query )
