@@ -20,5 +20,5 @@ The performance of the new model is systematically compared against the establis
 
 ## Team 
 * Hichem Hadhri (mohamed.hadhri@epfl.ch)
-* Yosr Jelassi (yosr.jelassy@epfl.ch)
+* Yosr Jelassi (yosr.jelassi@epfl.ch)
 * Ajkuna Seipi (ajkuna.seipi@epfl.ch)
